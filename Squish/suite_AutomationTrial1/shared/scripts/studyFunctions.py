@@ -21,7 +21,7 @@ def click_module(module, ct=False):
     if ct == False:
         if object.exists(toolbarModuleButton) is True:
             if squish.waitForObject(toolbarModuleButton).text == module:
-                test.log("Study Already Loaded")
+                test.log("Module Already Loaded")
                 return
         
     while True:
@@ -64,7 +64,7 @@ def click_module(module, ct=False):
     return
 
 
-def window_finder(window_name):
+def find_window(window_name):
     
     windows_dict = {"viewer1": ":moduleFrame_DcmFrameGL",          # Viewer TopLeft
                     "viewer2": ":moduleFrame_DcmFrameGL_2",        # Viewer TopRight
@@ -89,8 +89,8 @@ def window_finder(window_name):
                     
                     "4d flow": ":mMainPrepFrame.4D Flow_DcmFrameGL",
                     
-                    "flow mag": ":frame2.Magnitude_DcmFrameGL",
-                    "flow phas": ":frame1.Phase_DcmFrameGL",
+                    "flow2": ":frame2.Magnitude_DcmFrameGL",
+                    "flow1": ":frame1.Phase_DcmFrameGL",
                     
                     "mitral1": ":mMprFrame.mAxialMprFrame_TriPlaneMprFrame",
                     "mitral2": ":mMprFrame.mCoronalMprFrame_TriPlaneMprFrame",
@@ -108,14 +108,25 @@ def window_finder(window_name):
 
 
     for window in [k for k, v in windows_dict.items() if v == windows_dict[window_name]]:
-        return windows_dict[window]
-
+        properties = object.properties( squish.waitForObject(windows_dict[window]))
+        
+        # Search for key parameters "width" and "height"
+        for name, value in properties.iteritems():
+            if name == "width":
+                x = value
+        
+            if name == "height":
+                y = value
+        
+        return windows_dict[window], x, y
+    
 
 def load_series(window_given, series_num):
     
-    window = window_finder(window_given)
     series = ":scrollArea.frame-%s_SeriesThumbPreview" % (series_num-1)
     series_scrollbar = "{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' type='QScrollBar' unnamed='1' visible='1'}"
+
+    window, x, y = find_window(window_given)
 
     # if series needed is bigger than 8, check if scrolling is needed to reach the series
     if object.exists(series_scrollbar):
