@@ -6,21 +6,17 @@ import object
 import objectMap
 import squishinfo
 import squish
+import cvi42Objects
 
 def click_module(module, ct=False):
     
     counter = 0 
-    
-    toolbarModuleButton = ":cmr42MainWindow.mCurrentProtocolStepButton_QToolButton"
     moduleListItem = "{container=':mWorkflowDockWidget.protocolSteps_Workflow::ProtocolStepListWidget' text='%s' type='QModelIndex'}" % module
-    moduleListScrollbar = ":protocolSteps_QScrollBar"
-    addProtocolButton = ":mWorkflowDockWidget.insertStep_QPushButton"
-    addProtocolWindow = ":cmr42MainWindow.mModuleMenu_QMenu"
 
     # If the study is MR, the icon of the selected module is available in the toolbar. Checks if module already selected
     if ct == False:
-        if object.exists(toolbarModuleButton) is True:
-            if squish.waitForObject(toolbarModuleButton).text == module:
+        if object.exists(cvi42Objects.toolbarModuleButton) is True:
+            if squish.waitForObject(cvi42Objects.toolbarModuleButton).text == module:
                 test.log("Module Already Loaded")
                 return
         
@@ -30,17 +26,21 @@ def click_module(module, ct=False):
             
             if counter == 0:
                 # If module list scroll bar available, mouse scroll to try and find module
-                if object.exists(moduleListScrollbar):
+                if object.exists(cvi42Objects.moduleListScrollbar):
                     # Mouse scrolls up all the way to see top of visible module list
-                    squish.sendEvent("QWheelEvent", squish.waitForObject(moduleListScrollbar), 103, 527, 540, 0, 2)
+                    squish.sendEvent("QWheelEvent", squish.waitForObject(cvi42Objects.moduleListScrollbar), 103, 527, 540, 0, 2)
     
                     # If module is visible, click it, and exit loop
                     if object.exists(moduleListItem) is True:
                         squish.mouseClick(squish.waitForObject(moduleListItem))
+                        
+                        time = loading_time()
+                        if time > 10:
+                            test.log("Time to load module: %.2f" % time)
                         break
                     
                     # If scroll bar available, scroll down a little bit each iteration
-                    squish.sendEvent("QWheelEvent", squish.waitForObject(moduleListScrollbar), 3, 307, -340, 0, 2)
+                    squish.sendEvent("QWheelEvent", squish.waitForObject(cvi42Objects.moduleListScrollbar), 3, 307, -340, 0, 2)
                 
                 # If mouse scroll bar not available, pass each time
                 else:
@@ -50,15 +50,25 @@ def click_module(module, ct=False):
             
             # After four attempts, if module is not found, select it from the protocol list and click the module
             if counter == 4:
-                squish.mouseClick(addProtocolButton)
-                squish.activateItem(squish.waitForObjectItem(addProtocolWindow, module))
+                squish.mouseClick(squish.waitForObject(cvi42Objects.addProtocolButton))
+                squish.activateItem(squish.waitForObjectItem(cvi42Objects.addProtocolWindow, module))
                 
                 squish.mouseClick(squish.waitForObject(moduleListItem))
+                
+                time = loading_time()
+                if time > 10:
+                    test.log("Time to load module: %.2f" % time)
+                
                 return
         
         # If module exists from the beginning, select it and exit                
         else:
             squish.mouseClick(squish.waitForObject(moduleListItem))
+            
+            time = loading_time()
+            if time > 10:
+                test.log("Time to load module: %.2f" % time)
+                
             return
         
     return
@@ -96,9 +106,9 @@ def find_window(window_name):
                     "mitral2": ":mMprFrame.mCoronalMprFrame_TriPlaneMprFrame",
                     "mitral3": ":mMprFrame.mSagittalMprFrame_TriPlaneMprFrame",
                     
-                    "aortic1": ":mMprFrame.mRefTriPlaneMprFrames1_TriPlaneMprFrame",
-                    "aortic2": ":mMprFrame.mRefTriPlaneMprFrames0_TriPlaneMprFrame",
-                    "aortic3": ":mMprFrame.mRefTriPlaneMprFrames2_TriPlaneMprFrame",
+                    "aortic1": ":mMprFrame.mCoronalMprFrame_TriPlaneMprFrame",
+                    "aortic2": ":mMprFrame.mAxialMprFrame_TriPlaneMprFrame",
+                    "aortic3": ":mMprFrame.mSagittalMprFrame_TriPlaneMprFrame",
                     "aortic4": ":mMprFrame.mRefSuperVisFrame_SuperVisFrame",
                     
                     "fem1": ":mMprFrame.mRefTriPlaneMprFrames0_TriPlaneMprFrame_2",
@@ -108,7 +118,7 @@ def find_window(window_name):
 
 
     for window in [k for k, v in windows_dict.items() if v == windows_dict[window_name]]:
-        properties = object.properties( squish.waitForObject(windows_dict[window]))
+        properties = object.properties(squish.waitForObject(windows_dict[window]))
         
         # Search for key parameters "width" and "height"
         for name, value in properties.iteritems():
@@ -124,54 +134,60 @@ def find_window(window_name):
 def load_series(window_given, series_num):
     
     series = ":scrollArea.frame-%s_SeriesThumbPreview" % (series_num-1)
-    series_scrollbar = "{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' type='QScrollBar' unnamed='1' visible='1'}"
-
+    
     window, x, y = find_window(window_given)
 
     # if series needed is bigger than 8, check if scrolling is needed to reach the series
-    if object.exists(series_scrollbar):
-        squish.scrollTo(squish.waitForObject(series_scrollbar), -505)
+    if object.exists(cvi42Objects.series_scrollbar):
+        squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), -505)
+        
+        if series_num > 4:
+            squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), 155)
+        
         if series_num > 8:
-            squish.scrollTo(squish.waitForObject(series_scrollbar), 255)
+            squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), 255)
     
     # Load series into window requested
     squish.mouseMove(squish.waitForObject(series), 5, 5)
     squish.mousePress(squish.waitForObject(series))
-    squish.snooze(1)
+#     squish.snooze(1)
     squish.mouseRelease(squish.waitForObject(window))
-    squish.snooze(2)
+#     squish.snooze(1)
+
+    # Wait for progress bar 
+    time = loading_time()
+
+    if time > 10:
+        test.log("Time to load series: %.2f" % time)
     
     return
 
 
 def anonymize_study(study, anon_name):
     
-    statusBar =                         ":cmr42MainWindow.cmr42StatusBar_QStatusBar"
-    returnPatientlistButton =           ":cmr42MainWindow.Patient List_QToolButton"
-    patientlistEditBox =                ":mFilterStringLineEdit_QLineEdit"
-    studyTreeitem =                     ":listSplitter.studyListTreeWidget_DragListView"
-    anonymizeWindow =                   ":Anonymize_QInputDialog"
-    contextMenu =                       ":cmr42MainWindow_QMenu"
-    anonymizeEditBox =                  "{type='QLineEdit' unnamed='1' visible='1'}"
-    anonymizeOkButton =                 ":dcmBrowser.OK_QPushButton"
-    
-    # Grabs the status bar object to check current message
-    status = squish.waitForObject(statusBar);
-      
     # If user is not in patient list page condition
-    if object.exists(returnPatientlistButton) is True:
-        squish.clickButton(squish.waitForObject(returnPatientlistButton))  
-
-    # Searches for study, and anonymizes
-    squish.waitForObject(patientlistEditBox).setText(study)
-    squish.openContextMenu(squish.waitForObjectItem(studyTreeitem, study), 50, 5, 0)
+    if object.exists(cvi42Objects.returnPatientlistButton) is True:
+        squish.clickButton(squish.waitForObject(cvi42Objects.returnPatientlistButton))  
+        
+    # Grabs the status bar object to check current message
+    status = squish.waitForObject(cvi42Objects.statusBar);
     
-    squish.activateItem(squish.waitForObjectItem(contextMenu, "Anonymize Study"))
-    squish.waitForObject(anonymizeEditBox).setText(anon_name)
-    squish.clickButton(squish.waitForObject(anonymizeOkButton))
+    if "\\" in study:
+        studyUpdated = study.replace("\\","")
+    else:
+        studyUpdated = study
+    
+    # Searches for study, and anonymizes
+    squish.waitForObject(cvi42Objects.patientlistEditBox).setText(studyUpdated)
+    
+    squish.openContextMenu(squish.waitForObjectItem(cvi42Objects.studyTreeitem, study), 50, 5, 0)
+    
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.contextMenu, "Anonymize Study"))
+    squish.waitForObject(cvi42Objects.anonymizeEditBox).setText(anon_name)
+    squish.clickButton(squish.waitForObject(cvi42Objects.anonymizeOkButton))
     
     start = time.time()
-    squish.snooze(4)
+#     squish.snooze(4)
     
     while True:
         if status.currentMessage() == "Import Study done":
@@ -182,6 +198,134 @@ def anonymize_study(study, anon_name):
     
     test.log("Anonymizing %s time: %.2f" %(study, (end-start)))
     
-    return
+    return anon_name
 
     
+def loading_time():
+
+    progressbarWindow = ":_PersistentProgressDialog"
+    progressBarLabelBiLAX = ":LAX4ch Contour detection is in progress..._QLabel"
+    progressBarBiLAX = ":LAX4ch Contour detection is in progress..._QProgressBar"
+    
+    start = time.time()
+
+    counter = 0
+    while True:
+    # If progress r exists, restart cycle
+        if object.exists(progressbarWindow) is True or object.exists(progressBarBiLAX) is True:
+            pass
+    #             test.log("NOT BAD")
+        else:
+            # If dialog exists after initial pass, restart cycle and reset counter
+            if object.exists(progressbarWindow) is True or object.exists(progressBarBiLAX) is True:
+                pass
+                counter = 0
+                
+            # If dialog doesn't exist for three consecutive iterations, break and time.
+            else:
+                counter += 1
+                if counter > 2:
+                    break
+    end = time.time()
+    
+    return end-start
+
+
+def save_workspace(workspace_name):
+    
+    statusBar = ":cmr42MainWindow.cmr42StatusBar_QStatusBar"
+    menuBar = ":cmr42MainWindow.appMenuBar_QMenuBar"
+    workspaceButton = ":cmr42MainWindow.workspaceMenu_QMenu"
+    workspaceWindowEdit = ":SaveAsWorkspaceDialog.workspaceNameEdit_QLineEdit"
+    workspaceWindowOkButton = ":SaveAsWorkspaceDialog.OK_QPushButton"
+    
+    # Grabs the status bar object to check current message
+    status = squish.waitForObject(statusBar);
+    
+    # Saves workspace as name given
+    squish.activateItem(squish.waitForObjectItem(menuBar, "Workspace"))
+    squish.activateItem(squish.waitForObjectItem(workspaceButton, "Save Workspace As"))
+    squish.waitForObject(workspaceWindowEdit).setText(workspace_name)
+    squish.clickButton(squish.waitForObject(workspaceWindowOkButton))
+    
+    start = time.time()
+    while True:
+        if status.currentMessage() == "Save workspace done.":
+            break
+        else:
+            pass
+    end = time.time()
+    
+    test.log("Saving workspace: %.2f"% (end-start))
+    
+    return
+
+
+def reset_workspace():
+    
+    menuBar = ":cmr42MainWindow.appMenuBar_QMenuBar"
+    workspaceButton = ":cmr42MainWindow.workspaceMenu_QMenu"
+    resetWorkspaceButtonOk = ":Reset Workspace.Reset_QPushButton"
+    
+    squish.activateItem(squish.waitForObjectItem(menuBar, "Workspace"))
+    squish.activateItem(squish.waitForObjectItem(workspaceButton, "Reset Workspace"))
+    squish.clickButton(squish.waitForObject(resetWorkspaceButtonOk))
+#     squish.snooze(2)
+    
+    return
+
+def load_workspace(workspace_name):
+    
+    workspace = "{column='0' container=':pLoadWorkspaceDialog.workspacesWidget_QTreeWidget' text='%s' type='QModelIndex'}" %workspace_name
+    menuBar = ":cmr42MainWindow.appMenuBar_QMenuBar"
+    workspaceButton = ":cmr42MainWindow.workspaceMenu_QMenu"
+    
+    squish.activateItem(squish.waitForObjectItem(menuBar, "Workspace"))
+    squish.activateItem(squish.waitForObjectItem(workspaceButton, "Load Workspace"))
+
+    squish.doubleClick(squish.waitForObject(workspace))
+#     squish.snooze(2)
+    
+    return
+
+
+def close_study():
+    
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.menuBar, "Workspace"))
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.workspaceButton, "Close Study"))
+    start = time.time()
+    
+    while True:
+        if object.exists(cvi42Objects.patientlistEditBox) is True:
+            break
+        else:
+            pass
+    end = time.time()
+    
+    test.log("Time to close study: %.2f" %(end-start))    
+       
+    return
+
+def delete_study(study_name):
+    
+    squish.waitForObject(cvi42Objects.patientlistEditBox).setText(study_name)
+    
+    squish.openContextMenu(squish.waitForObjectItem(cvi42Objects.studyTreeitem, study_name), 50, 13, 0)
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.contextMenu, "Delete Study"))
+#     squish.snooze(1)
+    squish.clickButton(squish.waitForObject(cvi42Objects.DeleteStudyOkButton))
+    start = time.time()
+    
+    while True:
+        if object.exists(cvi42Objects.UpdatingStudyListMessage):
+            break
+        else:
+            pass
+    end = time.time()
+    
+    test.log("Time to delete study: %.2f" %(end-start))
+    
+    squish.waitForObject(cvi42Objects.patientlistEditBox).setText("")
+
+    
+    return

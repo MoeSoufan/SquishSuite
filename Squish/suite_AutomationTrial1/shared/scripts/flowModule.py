@@ -11,7 +11,7 @@ def segment_forward():
     forwardContour = ":mContourOptions.ToolButton-segForwardAction_QToolButton"
     
     squish.mousePress(squish.waitForObject(segmentContour))
-    squish.snooze(1)
+#     squish.snooze(1)
     squish.mouseRelease(squish.waitForObject(segmentContour))
     
     squish.clickButton(squish.waitForObject(forwardContour))

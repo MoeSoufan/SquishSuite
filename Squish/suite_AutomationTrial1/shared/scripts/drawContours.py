@@ -21,7 +21,6 @@ def lineContour(window_name, num=3):
         # Mouse press and release inside the frame of the selected window
         squish.mousePress(window, randint(0+50, x-70), randint(0+50, y-70), squish.Qt.LeftButton);
         squish.mouseRelease(window, randint(0+50, x-70), randint(0+50, y-70), squish.Qt.LeftButton);
-
         
         counter += 1
         

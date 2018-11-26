@@ -6,7 +6,65 @@ import object
 import objectMap
 import squishinfo
 import squish
+import studyFunctions
 
+def click_ml(button):
+    
+    toolBarObject = ":cmr42MainWindow.ToolBar_QToolBar"
+    contextWindow = ":cmr42MainWindow_QMenu"
+    
+#     # If button exists in toolbar, clicks otherwise, find button
+#     children = find_children_by_text(squish.waitForObject(toolBarObject), button)
+    
+    contextButton = find_context_menu(button)
+    squish.openContextMenu(squish.waitForObject(contextButton), 30, 20, 0)
+    squish.activateItem(squish.waitForObjectItem(contextWindow, button))
+#         squish.snooze(1)
+    
+    squish.clickButton(squish.waitForObject(contextButton))
+
+    # Wait for progress bar 
+    time = studyFunctions.loading_time()
+ 
+    test.log("Short3d %s: %.2f "% (button, time))
+    return
+    
+    
+def find_context_menu(button):
+    
+    machine_butto = {"Detect Endo/Epi Contours Current Phase"   : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Endo/Epi Contours Current Slice"   : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Endo/Epi Contours Entire Stack"    : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Endo/Epi Contours Current Image"   : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Endo Contours Current Phase"       : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Endo Contours Current Slice"       : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Endo Contours Entire Stack"        : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Epi Contours Current Phase"        : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Epi Contours Current Slice"        : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect Epi Contours Entire Stack"         : ":mContourDetectionMrTools.MrButton_SwitchingToolButton",
+                     "Detect RV Contours Current Phase"         : ":mContourDetectionMrTools.RvButton_SwitchingToolButton",
+                     "Detect RV Contours Current Slice"         : ":mContourDetectionMrTools.RvButton_SwitchingToolButton",
+                     "Detect RV Contours Entire Stack"          : ":mContourDetectionMrTools.RvButton_SwitchingToolButton",
+                     "Detect LV/RV Contours at ED/ES Phases"    : ":mContourDetectionMrMlTools.mlButton_SwitchingToolButton",
+                     "Detect LV/RV Contours Current Phase"      : ":mContourDetectionMrMlTools.mlButton_SwitchingToolButton",
+                     "Detect LV/RV Contours Entire Stack"       : ":mContourDetectionMrMlTools.mlButton_SwitchingToolButton",
+                     "Detect LV/RV Contours Current Slice"      : ":mContourDetectionMrMlTools.mlButton_SwitchingToolButton",
+                     "Detect LV/RV Contours Current Image"      : ":mContourDetectionMrMlTools.mlButton_SwitchingToolButton",
+                     "Detect LV Endo/Epi Contours Current Phase": ":mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton",
+                     "Detect LV Endo Contours Current Phase"    : ":mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton",
+                     "Detect LV Endo/Epi Contours Entire Stack" : ":mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton",
+                     "Detect LV Endo Contours Entire Stack"     : ":mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton",
+                     "Detect RV Contours Current Phase"         : ":mContourDetectionMrMlTools.mlRvButton_SwitchingToolButton",
+                     "Detect RV Contours Entire Stack"          : ":mContourDetectionMrMlTools.mlRvButton_SwitchingToolButton"}
+    
+    for key, value in machine_butto.iteritems():
+        if key == button:
+            return value
+#     for filtered_button in [k for k, v in machine_butto.items() if v == machine_butto[button]]:
+#          test.log("%s ,%s" % (k,v))
+         
+            
+    
 def find_children_by_text(obj, text, max_count=1):
     children = object.children(obj)
     found_children=[]
@@ -25,60 +83,3 @@ def find_children_by_text(obj, text, max_count=1):
             found_children = found_children[:max_count]
             break
     return found_children
-
-
-def click_ml(button):
-    
-    toolBarObject = ":cmr42MainWindow.ToolBar_QToolBar"
-    contextWindow = "cmr42MainWindow_QMenu"
-    
-    # If button exists in toolbar, clicks otherwise, find button
-    children = find_children_by_text(squish.waitForObject(toolBarObject), button)
-#     
-    try:
-        squish.mouseClick(children[0])
-    except RuntimeError:
-        contextButton = find_context_menu(button)
-#         squish.openContextMenu(squish.waitForObject(":mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton")
-        # activateItem(waitForObjectItem(":cmr42MainWindow_QMenu", "Detect LV Endo/Epi Contours Entire Stack"))
-
-        test.log("no")
-        
-        
-    return
-    
-    
-def find_context_menu(button):
-    
-    machine_butto = {"Detect Endo/Epi Contours Current Phase": 1,
-                     "Detect Endo/Epi Contours Current Slice": 1,
-                     "Detect Endo/Epi Contours Entire Stack": 1,
-                     "Detect Endo/Epi Contours Current Image": 1,
-                     "Detect Endo Contours Current Phase": 1,
-                     "Detect Endo Contours Current Slice": 1,
-                     "Detect Endo Contours Entire Stack": 1,
-                     "Detect Epi Contours Current Phase": 1,
-                     "Detect Epi Contours Current Slice": 1,
-                     "Detect Epi Contours Entire Stack": 1,
-                     "Detect RV Contours Current Phase": 2,
-                     "Detect RV Contours Current Slice": 2,
-                     "Detect RV Contours Entire Stack": 2,
-                     "Detect LV/RV Contours at ED/ES Phases": 3,
-                     "Detect LV/RV Contours Current Phase": 3,
-                     "Detect LV/RV Contours Entire Stack": 3,
-                     "Detect LV/RV Contours Current Slice": 3,
-                     "Detect LV/RV Contours Current Image": 3,
-                     "Detect LV Endo/Epi Contours Current Phase": 4,
-                     "Detect LV Endo Contours Current Phase": 4,
-                     "Detect LV Endo/Epi Contours Entire Stack": 4,
-                     "Detect LV Endo Contours Entire Stack": 4,
-                     "Detect RV Contours Current Phase": 5,
-                     "Detect RV Contours Entire Stack": 5}
-    
-#     if object.exists(waitF)
-# 
-# openContextMenu(waitForObject(":mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton"), 25, 20, 0)
-# activateItem(waitForObjectItem(":cmr42MainWindow_QMenu", "Detect LV Endo/Epi Contours Entire Stack"))
-
-
-# :mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton

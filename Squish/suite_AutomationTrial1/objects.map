@@ -1,0 +1,215 @@
+:Anonymize:\n  Patient Name - SA-3D Demo\n  Study Date - not available\n\nNew patient name:_QLineEdit	{buddy=':dcmBrowser.Anonymize:\n  Patient Name - SA-3D Demo\n  Study Date - not available\n\nNew patient name:_QLabel' type='QLineEdit' unnamed='1' visible='1'}
+:Anonymize_QInputDialog	{type='QInputDialog' unnamed='1' visible='1' windowTitle='Anonymize'}
+:Contour detection is in progress..._QLabel	{text='Contour detection is in progress...' type='QLabel' unnamed='1' visible='1' window=':_PersistentProgressDialog'}
+:Contour detection is in progress..._QProgressBar	{aboveWidget=':Contour detection is in progress..._QLabel' type='QProgressBar' unnamed='1' visible='1' window=':_PersistentProgressDialog'}
+:Detected Running cvi42 Instance.No_QPushButton	{text='No' type='QPushButton' unnamed='1' visible='1' window=':Detected Running cvi42 Instance_QMessageBox'}
+:Detected Running cvi42 Instance.Yes_QPushButton	{text='Yes' type='QPushButton' unnamed='1' visible='1' window=':Detected Running cvi42 Instance_QMessageBox'}
+:Detected Running cvi42 Instance.qt_msgbox_buttonbox_QDialogButtonBox	{name='qt_msgbox_buttonbox' type='QDialogButtonBox' visible='1' window=':Detected Running cvi42 Instance_QMessageBox'}
+:Detected Running cvi42 Instance_QMessageBox	{type='QMessageBox' unnamed='1' visible='1' windowTitle='Detected Running cvi42 Instance'}
+:Flow4dPrepOptionsFrame.mConfirmRoiPushButton_QPushButton	{container=':mMainPrepFrame.Flow4dPrepOptionsFrame_QFrame' name='mConfirmRoiPushButton' type='QPushButton' visible='1'}
+:LAX4ch Contour detection is in progress..._QLabel	{text='LAX4ch Contour detection is in progress...' type='QLabel' unnamed='1' visible='1' window=':_PersistentProgressDialog'}
+:LAX4ch Contour detection is in progress..._QProgressBar	{aboveWidget=':LAX4ch Contour detection is in progress..._QLabel' type='QProgressBar' unnamed='1' visible='1' window=':_PersistentProgressDialog'}
+:LandmarkOptionsFrame.mWorkflowGroupbox_QGroupBox	{container=':scrollArea.LandmarkOptionsFrame_LandmarkOptionsFrame' name='mWorkflowGroupbox' type='QGroupBox' visible='1'}
+:Layout3x1VFrame.mMprFrame_QFrame	{container=':moduleFrame.Layout3x1VFrame_QFrame' name='mMprFrame' type='QFrame' visible='1'}
+:LayoutFlow4dPrepHFrame.mMainPrepFrame_QFrame	{container=':mCentralStack.LayoutFlow4dPrepHFrame_QFrame' name='mMainPrepFrame' type='QFrame' visible='1'}
+:LayoutMprDoubleObliqueHFrame.mSplitter_QSplitter	{container=':mCentralStack.LayoutMprDoubleObliqueHFrame_QFrame' name='mSplitter' type='QSplitter' visible='1'}
+:LayoutVerticalFrame.scrollArea_QScrollArea	{container=':mSidePanelFrame.LayoutVerticalFrame_QFrame' name='scrollArea' type='QScrollArea' visible='1'}
+:LayoutViewer4dHFrame.mRefSuperVisFrame_SuperVisFrame	{container=':moduleFrame.LayoutViewer4dHFrame_QFrame' name='mRefSuperVisFrame' type='SuperVisFrame' visible='1'}
+:Loading volume dataset: Phase 3/10_QLabel	{text='Loading volume dataset: Phase 3/10' type='QLabel' unnamed='1' visible='1' window=':_PersistentProgressDialog'}
+:Loading volume dataset: Phase 3/10_QProgressBar	{aboveWidget=':Loading volume dataset: Phase 3/10_QLabel' type='QProgressBar' unnamed='1' visible='1' window=':_PersistentProgressDialog'}
+:Login Failure.OK_QPushButton	{text='OK' type='QPushButton' unnamed='1' visible='1' window=':Login Failure_QMessageBox'}
+:Login Failure_QMessageBox	{type='QMessageBox' unnamed='1' visible='1' windowTitle='Login Failure'}
+:MvAnnulusOptionsFrame.groupBox_QGroupBox	{container=':scrollArea.MvAnnulusOptionsFrame_QFrame' name='groupBox' type='QGroupBox' visible='1'}
+:Reset Workspace.Reset_QPushButton	{text='Reset' type='QPushButton' unnamed='1' visible='1' window=':Reset Workspace_QMessageBox'}
+:Reset Workspace_QMessageBox	{type='QMessageBox' unnamed='1' visible='1' windowTitle='Reset Workspace'}
+:SA-3D Demo_QAction	{text='SA-3D Demo' type='QAction' unnamed='1' visible='true'}
+:SaveAsWorkspaceDialog.OK_QPushButton	{text='OK' type='QPushButton' unnamed='1' visible='1' window=':SaveAsWorkspaceDialog_SaveAsWorkspaceDialog'}
+:SaveAsWorkspaceDialog.workspaceNameEdit_QLineEdit	{name='workspaceNameEdit' type='QLineEdit' visible='1' window=':SaveAsWorkspaceDialog_SaveAsWorkspaceDialog'}
+:SaveAsWorkspaceDialog_SaveAsWorkspaceDialog	{name='SaveAsWorkspaceDialog' type='SaveAsWorkspaceDialog' visible='1'}
+:Select indication:_HeaderViewItem	{container=':indications_QHeaderView' text='Select indication:' type='HeaderViewItem' visible='true'}
+:Study Already Open_QMessageBox	{type='QMessageBox' unnamed='1' visible='1' windowTitle='Study Already Open'}
+:StudyListWidget.mFilterLineEditLabel_QLabel	{container=':mainSplitter.StudyListWidget_QFrame' name='mFilterLineEditLabel' type='QLabel' visible='1'}
+:StudyListWidget.tagSplitter_QSplitter	{container=':mainSplitter.StudyListWidget_QFrame' name='tagSplitter' type='QSplitter' visible='1'}
+:Untitled - Aortic Valve\n    1: Length 51.77 mm\n_QModelIndex	{container=':mMprCaptureFrame_MprCaptureListWidget' text='Untitled - Aortic Valve\n    1: Length 51.77 mm\n' type='QModelIndex'}
+:Untitled - Aortic Valve (2)\n    1: Length 33.78 mm\n    2: Length 28.95 mm\n_QModelIndex	{container=':mMprCaptureFrame_MprCaptureListWidget' text='Untitled - Aortic Valve (2)\n    1: Length 33.78 mm\n    2: Length 28.95 mm\n' type='QModelIndex'}
+:Untitled - Mitral Valve (1)\n    1: Length 82.04 mm\n    2: Length 57.97 mm\n_QModelIndex	{container=':mMprCaptureFrame_MprCaptureListWidget' text='Untitled - Mitral Valve (1)\n    1: Length 82.04 mm\n    2: Length 57.97 mm\n' type='QModelIndex'}
+:User Already Logged on.Yes_QPushButton	{text='Yes' type='QPushButton' unnamed='1' visible='1' window=':User Already Logged on_QMessageBox'}
+:User Already Logged on_QMessageBox	{type='QMessageBox' unnamed='1' visible='1' windowTitle='User Already Logged on'}
+:_PersistentProgressDialog	{type='PersistentProgressDialog' unnamed='1' visible='1'}
+:_QWidgetLineControl	{occurrence='282' type='QWidgetLineControl' unnamed='1'}
+:bottomSplitter.flowTabBar_QTabBar	{container=':moduleFrame.bottomSplitter_QSplitter' name='flowTabBar' type='QTabBar' visible='1'}
+:cmr42MainWindow.Add Report_QToolButton	{text='Add Report' type='QToolButton' unnamed='1' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.Patient List_QToolButton	{text='Patient List' type='QToolButton' unnamed='1' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.Return to Study_QToolButton	{text='Return to Study' type='QToolButton' unnamed='1' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.ToolBar_QToolBar	{name='ToolBar' type='QToolBar' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.ToolButton-contourAction-perimeterPoints_QToolButton	{name='ToolButton-contourAction-perimeterPoints' type='QToolButton' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.appMenuBar_QMenuBar	{name='appMenuBar' type='QMenuBar' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.cmr42StatusBar_QStatusBar	{name='cmr42StatusBar' type='QStatusBar' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mCentralFrame_QFrame	{name='mCentralFrame' type='QFrame' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mContextMenuToLaunch_QMenu	{name='mContextMenuToLaunch' type='QMenu' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mContourDetectionMrMlTools_ButtonStrip	{name='mContourDetectionMrMlTools' type='ButtonStrip' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mContourDetectionMrTools_ButtonStrip	{name='mContourDetectionMrTools' type='ButtonStrip' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mContourDetectionTools_ButtonStrip	{name='mContourDetectionTools' type='ButtonStrip' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mContourOptions_ButtonStrip	{name='mContourOptions' type='ButtonStrip' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mContourTools_DcmFrameContourHandle	{name='mContourTools' type='DcmFrameContourHandle' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mCurrentProtocolStepButton_QToolButton	{name='mCurrentProtocolStepButton' type='QToolButton' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mLicenseStatusLabel_QLabel	{name='mLicenseStatusLabel' type='QLabel' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mModuleMenu_QMenu	{name='mModuleMenu' type='QMenu' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mPageButtons[ePage::Annulus]_QToolButton	{name='mPageButtons[ePage::Annulus]' type='QToolButton' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mTaskLabel_QLabel	{name='mTaskLabel' type='QLabel' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mWorkflowDockWidget_Workflow::DockWidget	{name='mWorkflowDockWidget' type='Workflow::DockWidget' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.mWorkflowIndicationWidget_Workflow::IndicationWidget	{name='mWorkflowIndicationWidget' type='Workflow::IndicationWidget' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.seriesSelectionDockWidget_Cmr42DockWidget	{name='seriesSelectionDockWidget' type='Cmr42DockWidget' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow.workspaceMenu_QMenu	{name='workspaceMenu' type='QMenu' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:cmr42MainWindow_Cmr42MainWindow	{name='cmr42MainWindow' type='Cmr42MainWindow' visible='1'}
+:cmr42MainWindow_QMenu	{type='QMenu' unnamed='1' visible='1' window=':cmr42MainWindow_Cmr42MainWindow'}
+:comboBoxServer_QComboBox	{buddy=':dialog.labelServer_QLabel' name='comboBoxServer' type='QComboBox' visible='1'}
+:contourHandle.ToolButton-contourAction-lineRoiContour_QToolButton	{container=':contourHandle_DcmFrameContourHandle' name='ToolButton-contourAction-lineRoiContour' type='QToolButton' visible='1'}
+:contourHandle_DcmFrameContourHandle	{name='contourHandle' type='DcmFrameContourHandle' visible='1'}
+:cvi42 Connection Error.OK_QPushButton	{text='OK' type='QPushButton' unnamed='1' visible='1' window=':cvi42 Connection Error_QMessageBox'}
+:cvi42 Connection Error_QMessageBox	{type='QMessageBox' unnamed='1' visible='1' windowTitle='cvi42 Connection Error'}
+:dcmBrowser.Anonymize:\n  Patient Name - SA-3D Demo\n  Study Date - not available\n\nNew patient name:_QLabel	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='Anonymize:\n  Patient Name - SA-3D Demo\n  Study Date - not available\n\nNew patient name:' type='QLabel' unnamed='1' visible='1'}
+:dcmBrowser.Cancel_QPushButton	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='Cancel' type='QPushButton' unnamed='1' visible='1'}
+:dcmBrowser.Delete_QPushButton	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='Delete' type='QPushButton' unnamed='1' visible='1'}
+:dcmBrowser.OK_QPushButton	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='OK' type='QPushButton' unnamed='1' visible='1'}
+:dcmBrowser.Yes_QPushButton	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='Yes' type='QPushButton' unnamed='1' visible='1'}
+:dcmBrowser.[Bug] Problematic Studies_ChangeIndicatingCheckBox	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='[Bug] Problematic Studies' type='ChangeIndicatingCheckBox' unnamed='1' visible='1'}
+:dcmBrowser.[Bug] Problematic Studies_ChangeIndicatingCheckBox_2	{container=':mCentralStack.dcmBrowser_DicomBrowser' text='[Bug] Problematic Studies' type='ChangeIndicatingCheckBox' unnamed='1' visible='0'}
+:dcmBrowser.mainSplitter_QSplitter	{container=':mCentralStack.dcmBrowser_DicomBrowser' name='mainSplitter' type='QSplitter' visible='1'}
+:dialog.buttonCancel_QPushButton	{name='buttonCancel' type='QPushButton' visible='1' window=':dialog_LoginDialog'}
+:dialog.buttonLogin_QPushButton	{name='buttonLogin' type='QPushButton' visible='1' window=':dialog_LoginDialog'}
+:dialog.cvi42Logo_QLabel	{name='cvi42Logo' type='QLabel' visible='1' window=':dialog_LoginDialog'}
+:dialog.labelPassword_QLabel	{name='labelPassword' type='QLabel' visible='1' window=':dialog_LoginDialog'}
+:dialog.labelServer_QLabel	{name='labelServer' type='QLabel' visible='1' window=':dialog_LoginDialog'}
+:dialog.labelUserId_QLabel	{name='labelUserId' type='QLabel' visible='1' window=':dialog_LoginDialog'}
+:dialog_LoginDialog	{name='dialog' type='LoginDialog' visible='1'}
+:flowTabBar.Comparison_TabItem	{container=':bottomSplitter.flowTabBar_QTabBar' text='Comparison' type='TabItem'}
+:flowTabBar.Pulmonary Flow_TabItem	{container=':bottomSplitter.flowTabBar_QTabBar' text='Pulmonary Flow' type='TabItem'}
+:flowTabBar.Systemic Flow_TabItem	{container=':bottomSplitter.flowTabBar_QTabBar' text='Systemic Flow' type='TabItem'}
+:frame1.2CV_DcmFrameGL	{container=':splitter.frame1_QFrame' name='2CV' type='DcmFrameGL' visible='1'}
+:frame1.Multiple Long_DcmFrameGL	{container=':hSplitter.frame1_QFrame' name='Multiple Long' type='DcmFrameGL' visible='1'}
+:frame1.Phase_DcmFrameGL	{container=':moduleFrame.frame1_QFrame' name='Phase' type='DcmFrameGL' visible='1'}
+:frame2.4CV_DcmFrameGL	{container=':splitter.frame2_QFrame' name='4CV' type='DcmFrameGL' visible='1'}
+:frame2.Magnitude_DcmFrameGL	{container=':moduleFrame.frame2_QFrame' name='Magnitude' type='DcmFrameGL' visible='1'}
+:frame2.Ref_DcmFrameGL	{container=':hSplitter.frame2_QFrame' name='Ref' type='DcmFrameGL' visible='1'}
+:groupBox.mStartAssistedButton_QPushButton	{container=':MvAnnulusOptionsFrame.groupBox_QGroupBox' name='mStartAssistedButton' type='QPushButton' visible='1'}
+:hSplitter.Ref 1_DcmFrameGL	{container=':vSplitter.hSplitter_QSplitter' name='Ref 1' type='DcmFrameGL' visible='1'}
+:hSplitter.frame1_QFrame	{container=':vSplitter.hSplitter_QSplitter' name='frame1' type='QFrame' visible='1'}
+:hSplitter.frame2_QFrame	{container=':vSplitter.hSplitter_QSplitter' name='frame2' type='QFrame' visible='1'}
+:hSplitter.mAddRefFrameButton_QToolButton	{container=':vSplitter.hSplitter_QSplitter' name='mAddRefFrameButton' type='QToolButton' visible='1'}
+:hSplitter.mShowReferenceLinesCheckBox_QCheckBox	{container=':vSplitter.hSplitter_QSplitter' name='mShowReferenceLinesCheckBox' type='QCheckBox' visible='1'}
+:hSplitter.mShowReferenceLinesCheckBox_QFrame	{aboveWidget=':hSplitter.mShowReferenceLinesCheckBox_QCheckBox' container=':vSplitter.hSplitter_QSplitter' type='QFrame' unnamed='1' visible='1'}
+:hSplitter.saxFrame_QFrame	{container=':vSplitter.hSplitter_QSplitter' name='saxFrame' type='QFrame' visible='1'}
+:indications.No Indication_QModelIndex	{column='0' container=':mWorkflowIndicationWidget.indications_QTreeWidget' text='No Indication' type='QModelIndex'}
+:indications_QHeaderView	{container=':mWorkflowIndicationWidget.indications_QTreeWidget' orientation='1' type='QHeaderView' unnamed='1' visible='1'}
+:lineEditPassword_QLineEdit	{buddy=':dialog.labelPassword_QLabel' name='lineEditPassword' type='QLineEdit' visible='1'}
+:lineEditUserId_QLineEdit	{buddy=':dialog.labelUserId_QLabel' name='lineEditUserId' type='QLineEdit' visible='1'}
+:listSplitter.studyListTreeWidget_DragListView	{container=':tagSplitter.listSplitter_QSplitter' name='studyListTreeWidget' type='DragListView' visible='1'}
+:mCaptureSelectionFrame.mViewerMeasurementFrame_QFrame	{container=':moduleFrame.mCaptureSelectionFrame_ViewerSelectionFrame' name='mViewerMeasurementFrame' type='QFrame' visible='1'}
+:mCentralFrame.mCentralStack_QStackedWidget	{container=':cmr42MainWindow.mCentralFrame_QFrame' name='mCentralStack' type='QStackedWidget' visible='1'}
+:mCentralStack.LayoutFlow4dPrepHFrame_QFrame	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='LayoutFlow4dPrepHFrame' type='QFrame' visible='1'}
+:mCentralStack.LayoutMprDoubleObliqueHFrame_QFrame	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='LayoutMprDoubleObliqueHFrame' type='QFrame' visible='1'}
+:mCentralStack.OK_QPushButton	{container=':mCentralFrame.mCentralStack_QStackedWidget' text='OK' type='QPushButton' unnamed='1' visible='1'}
+:mCentralStack.dcmBrowser_DicomBrowser	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='dcmBrowser' type='DicomBrowser' visible='1'}
+:mCentralStack.mOkButton_QPushButton	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='mOkButton' type='QPushButton' visible='1'}
+:mCentralStack.mSelectAllButton_QPushButton	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='mSelectAllButton' type='QPushButton' visible='1'}
+:mCentralStack.moduleFrame_QFrame	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='moduleFrame' type='QFrame' visible='1'}
+:mCentralStack.stackWidget_QStackedWidget	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='stackWidget' type='QStackedWidget' visible='1'}
+:mCentralStack.tabBar_QTabBar	{container=':mCentralFrame.mCentralStack_QStackedWidget' name='tabBar' type='QTabBar' visible='1'}
+:mContourDetectionMrMlTools.mlButton_SwitchingToolButton	{container=':cmr42MainWindow.mContourDetectionMrMlTools_ButtonStrip' name='mlButton' type='SwitchingToolButton' visible='1'}
+:mContourDetectionMrMlTools.mlLvButton_SwitchingToolButton	{container=':cmr42MainWindow.mContourDetectionMrMlTools_ButtonStrip' name='mlLvButton' type='SwitchingToolButton' visible='1'}
+:mContourDetectionMrMlTools.mlRvButton_SwitchingToolButton	{container=':cmr42MainWindow.mContourDetectionMrMlTools_ButtonStrip' name='mlRvButton' type='SwitchingToolButton' visible='1'}
+:mContourDetectionMrTools.MrButton_SwitchingToolButton	{container=':cmr42MainWindow.mContourDetectionMrTools_ButtonStrip' name='MrButton' type='SwitchingToolButton' visible='1'}
+:mContourDetectionMrTools.RvButton_SwitchingToolButton	{container=':cmr42MainWindow.mContourDetectionMrTools_ButtonStrip' name='RvButton' type='SwitchingToolButton' visible='1'}
+:mContourDetectionTools.mlButton_SwitchingToolButton	{container=':cmr42MainWindow.mContourDetectionTools_ButtonStrip' name='mlButton' type='SwitchingToolButton' visible='1'}
+:mContourOptions.ToolButton-segAction_QToolButton	{container=':cmr42MainWindow.mContourOptions_ButtonStrip' name='ToolButton-segAction' type='QToolButton' visible='1'}
+:mContourOptions.ToolButton-segForwardAction_QToolButton	{container=':cmr42MainWindow.mContourOptions_ButtonStrip' name='ToolButton-segForwardAction' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-flow1Contour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-flow1Contour' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-flow2Contour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-flow2Contour' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-flow3Contour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-flow3Contour' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-flow4Contour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-flow4Contour' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-freeDrawRoiContour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-freeDrawRoiContour' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-lineRoiContour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-lineRoiContour' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-openSplinePerimeterPoints_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-openSplinePerimeterPoints' type='QToolButton' visible='1'}
+:mContourTools.ToolButton-contourAction-salaContour_QToolButton	{container=':cmr42MainWindow.mContourTools_DcmFrameContourHandle' name='ToolButton-contourAction-salaContour' type='QToolButton' visible='1'}
+:mFilterStringLineEdit_QLineEdit	{buddy=':StudyListWidget.mFilterLineEditLabel_QLabel' name='mFilterStringLineEdit' type='QLineEdit' visible='1'}
+:mGroupFrame.LVOT_QModelIndex	{container=':mMprCaptureFrame.mGroupFrame_LabelListWidget' text='LVOT' type='QModelIndex'}
+:mGroupFrame.MV to LAA_QModelIndex	{container=':mMprCaptureFrame.mGroupFrame_LabelListWidget' text='MV to LAA' type='QModelIndex'}
+:mMainPrepFrame.4D Flow_DcmFrameGL	{container=':LayoutFlow4dPrepHFrame.mMainPrepFrame_QFrame' name='4D Flow' type='DcmFrameGL' visible='1'}
+:mMainPrepFrame.Flow4dPrepOptionsFrame_QFrame	{container=':LayoutFlow4dPrepHFrame.mMainPrepFrame_QFrame' name='Flow4dPrepOptionsFrame' type='QFrame' visible='1'}
+:mMprCaptureFrame.mGroupFrame_LabelListWidget	{aboveWidget=':mMprCaptureFrame.mGroupFrame_QFrame' container=':scrollArea.mMprCaptureFrame_MprCaptureFrame' type='LabelListWidget' unnamed='1' visible='1'}
+:mMprCaptureFrame.mGroupFrame_QFrame	{container=':scrollArea.mMprCaptureFrame_MprCaptureFrame' name='mGroupFrame' type='QFrame' visible='1'}
+:mMprCaptureFrame_MprCaptureListWidget	{container=':scrollArea.mMprCaptureFrame_MprCaptureFrame' type='MprCaptureListWidget' unnamed='1' visible='1'}
+:mMprFrame.mAxialMprFrame_TriPlaneMprFrame	{container=':mSplitter.mMprFrame_QFrame' name='mAxialMprFrame' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mCoronalMprFrame_TriPlaneMprFrame	{container=':mSplitter.mMprFrame_QFrame' name='mCoronalMprFrame' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mRefSuperVisFrame_SuperVisFrame	{container=':mSplitter.mMprFrame_QFrame' name='mRefSuperVisFrame' type='SuperVisFrame' visible='1'}
+:mMprFrame.mRefSuperVisFrame_SuperVisFrame_2	{container=':Layout3x1VFrame.mMprFrame_QFrame' name='mRefSuperVisFrame' type='SuperVisFrame' visible='1'}
+:mMprFrame.mRefTriPlaneMprFrames0_TriPlaneMprFrame	{container=':mSplitter.mMprFrame_QFrame' name='mRefTriPlaneMprFrames0' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mRefTriPlaneMprFrames0_TriPlaneMprFrame_2	{container=':Layout3x1VFrame.mMprFrame_QFrame' name='mRefTriPlaneMprFrames0' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mRefTriPlaneMprFrames1_TriPlaneMprFrame	{container=':mSplitter.mMprFrame_QFrame' name='mRefTriPlaneMprFrames1' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mRefTriPlaneMprFrames1_TriPlaneMprFrame_2	{container=':Layout3x1VFrame.mMprFrame_QFrame' name='mRefTriPlaneMprFrames1' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mRefTriPlaneMprFrames2_TriPlaneMprFrame	{container=':mSplitter.mMprFrame_QFrame' name='mRefTriPlaneMprFrames2' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mRefTriPlaneMprFrames2_TriPlaneMprFrame_2	{container=':Layout3x1VFrame.mMprFrame_QFrame' name='mRefTriPlaneMprFrames2' type='TriPlaneMprFrame' visible='1'}
+:mMprFrame.mSagittalMprFrame_TriPlaneMprFrame	{container=':mSplitter.mMprFrame_QFrame' name='mSagittalMprFrame' type='TriPlaneMprFrame' visible='1'}
+:mSidePanelFrame.LayoutVerticalFrame_QFrame	{container=':mSplitter.mSidePanelFrame_QFrame' name='LayoutVerticalFrame' type='QFrame' visible='1'}
+:mSplitter.mMprFrame_QFrame	{container=':LayoutMprDoubleObliqueHFrame.mSplitter_QSplitter' name='mMprFrame' type='QFrame' visible='1'}
+:mSplitter.mSidePanelFrame_QFrame	{container=':LayoutMprDoubleObliqueHFrame.mSplitter_QSplitter' name='mSidePanelFrame' type='QFrame' visible='1'}
+:mSplitter.qt_tabwidget_stackedwidget_QStackedWidget	{container=':seriesSelectionDockWidget.mSplitter_QSplitter' name='qt_tabwidget_stackedwidget' type='QStackedWidget' visible='1'}
+:mViewerMeasurementFrame.mCameraButton_QPushButton	{container=':mCaptureSelectionFrame.mViewerMeasurementFrame_QFrame' name='mCameraButton' type='QPushButton' visible='1'}
+:mWorkflowDockWidget.insertStep_QPushButton	{container=':cmr42MainWindow.mWorkflowDockWidget_Workflow::DockWidget' name='insertStep' type='QPushButton' visible='1'}
+:mWorkflowDockWidget.mIndicationLabel_QLabel	{container=':cmr42MainWindow.mWorkflowDockWidget_Workflow::DockWidget' name='mIndicationLabel' type='QLabel' visible='1'}
+:mWorkflowDockWidget.protocolSteps_Workflow::ProtocolStepListWidget	{container=':cmr42MainWindow.mWorkflowDockWidget_Workflow::DockWidget' name='protocolSteps' type='Workflow::ProtocolStepListWidget' visible='1'}
+:mWorkflowGroupbox.mTricuspidPushButton_QPushButton	{container=':LandmarkOptionsFrame.mWorkflowGroupbox_QGroupBox' name='mTricuspidPushButton' type='QPushButton' visible='1'}
+:mWorkflowIndicationWidget.indications_QTreeWidget	{container=':cmr42MainWindow.mWorkflowIndicationWidget_Workflow::IndicationWidget' name='indications' type='QTreeWidget' visible='1'}
+:mainSplitter.StudyListWidget_QFrame	{container=':dcmBrowser.mainSplitter_QSplitter' name='StudyListWidget' type='QFrame' visible='1'}
+:moduleFrame.Layout3x1VFrame_QFrame	{container=':mCentralStack.moduleFrame_QFrame' name='Layout3x1VFrame' type='QFrame' visible='1'}
+:moduleFrame.LayoutViewer4dHFrame_QFrame	{container=':mCentralStack.moduleFrame_QFrame' name='LayoutViewer4dHFrame' type='QFrame' visible='1'}
+:moduleFrame.bottomSplitter_QSplitter	{container=':mCentralStack.moduleFrame_QFrame' name='bottomSplitter' type='QSplitter' visible='1'}
+:moduleFrame.frame1_QFrame	{container=':mCentralStack.moduleFrame_QFrame' name='frame1' type='QFrame' visible='1'}
+:moduleFrame.frame2_QFrame	{container=':mCentralStack.moduleFrame_QFrame' name='frame2' type='QFrame' visible='1'}
+:moduleFrame.mCaptureSelectionFrame_ViewerSelectionFrame	{container=':mCentralStack.moduleFrame_QFrame' name='mCaptureSelectionFrame' type='ViewerSelectionFrame' visible='1'}
+:moduleFrame.optionsGroupBox_QGroupBox	{container=':mCentralStack.moduleFrame_QFrame' name='optionsGroupBox' type='QGroupBox' visible='1'}
+:moduleFrame.splitter_QSplitter	{container=':mCentralStack.moduleFrame_QFrame' name='splitter' type='QSplitter' visible='1'}
+:moduleFrame.vSplitter_QSplitter	{container=':mCentralStack.moduleFrame_QFrame' name='vSplitter' type='QSplitter' visible='1'}
+:moduleFrame_DcmFrameGL	{container=':mCentralStack.moduleFrame_QFrame' type='DcmFrameGL' unnamed='1' visible='1'}
+:moduleFrame_DcmFrameGL_2	{container=':mCentralStack.moduleFrame_QFrame' occurrence='2' type='DcmFrameGL' unnamed='1' visible='1'}
+:moduleFrame_DcmFrameGL_3	{container=':mCentralStack.moduleFrame_QFrame' occurrence='3' type='DcmFrameGL' unnamed='1' visible='1'}
+:moduleFrame_DcmFrameGL_4	{container=':mCentralStack.moduleFrame_QFrame' occurrence='4' type='DcmFrameGL' unnamed='1' visible='1'}
+:optionsGroupBox.mAutoContourLabelCheckBox_QCheckBox	{container=':moduleFrame.optionsGroupBox_QGroupBox' name='mAutoContourLabelCheckBox' type='QCheckBox' visible='1'}
+:pLoadWorkspaceDialog.workspacesWidget_QTreeWidget	{name='workspacesWidget' type='QTreeWidget' visible='1' window=':pLoadWorkspaceDialog_LoadWorkspaceDialog'}
+:pLoadWorkspaceDialog_LoadWorkspaceDialog	{name='pLoadWorkspaceDialog' type='LoadWorkspaceDialog' visible='1'}
+:protocolSteps.Short\n 3D_QModelIndex	{container=':mWorkflowDockWidget.protocolSteps_Workflow::ProtocolStepListWidget' text='Short\n 3D' type='QModelIndex'}
+:protocolSteps_QScrollBar	{container=':mWorkflowDockWidget.protocolSteps_Workflow::ProtocolStepListWidget' type='QScrollBar' unnamed='1' visible='1'}
+:qt_tabwidget_stackedwidget.scrollArea_QScrollArea	{container=':mSplitter.qt_tabwidget_stackedwidget_QStackedWidget' name='scrollArea' type='QScrollArea' visible='1'}
+:saxFrame.SAX3D_DcmFrameGL	{container=':hSplitter.saxFrame_QFrame' name='SAX3D' type='DcmFrameGL' visible='1'}
+:scrollArea.LandmarkOptionsFrame_LandmarkOptionsFrame	{container=':LayoutVerticalFrame.scrollArea_QScrollArea' name='LandmarkOptionsFrame' type='LandmarkOptionsFrame' visible='1'}
+:scrollArea.MvAnnulusOptionsFrame_QFrame	{container=':LayoutVerticalFrame.scrollArea_QScrollArea' name='MvAnnulusOptionsFrame' type='QFrame' visible='1'}
+:scrollArea.frame-0_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-0' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-1_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-1' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-2_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-2' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-3_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-3' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-4_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-4' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-5_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-5' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-6_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-6' type='SeriesThumbPreview' visible='1'}
+:scrollArea.frame-8_SeriesThumbPreview	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' name='frame-8' type='SeriesThumbPreview' visible='1'}
+:scrollArea.mMprCaptureFrame_MprCaptureFrame	{container=':LayoutVerticalFrame.scrollArea_QScrollArea' name='mMprCaptureFrame' type='MprCaptureFrame' visible='1'}
+:scrollArea_QScrollBar	{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' type='QScrollBar' unnamed='1' visible='1'}
+:seriesSelectionDockWidget.mSplitter_QSplitter	{container=':cmr42MainWindow.seriesSelectionDockWidget_Cmr42DockWidget' name='mSplitter' type='QSplitter' visible='1'}
+:splitter.frame1_QFrame	{container=':moduleFrame.splitter_QSplitter' name='frame1' type='QFrame' visible='1'}
+:splitter.frame2_QFrame	{container=':moduleFrame.splitter_QSplitter' name='frame2' type='QFrame' visible='1'}
+:stackWidget.webEngView_QWebEngineView	{container=':mCentralStack.stackWidget_QStackedWidget' name='webEngView' type='QWebEngineView' visible='1'}
+:studyListTreeWidget.4D_066_QModelIndex	{column='1' container=':listSplitter.studyListTreeWidget_DragListView' text='4D_066' type='QModelIndex'}
+:studyListTreeWidget.SA-3D Demo_QModelIndex	{column='1' container=':listSplitter.studyListTreeWidget_DragListView' text='SA-3D Demo' type='QModelIndex'}
+:studyListTreeWidget.tagButton-{387489dd-1a3b-4301-8ec9-21fdc7d9ed52}_TagButton	{container=':listSplitter.studyListTreeWidget_DragListView' name='tagButton-{387489dd-1a3b-4301-8ec9-21fdc7d9ed52}' type='TagButton' visible='1'}
+:tabBar.Report_TabItem	{container=':mCentralStack.tabBar_QTabBar' text='Report' type='TabItem'}
+:tagSplitter.listSplitter_QSplitter	{container=':StudyListWidget.tagSplitter_QSplitter' name='listSplitter' type='QSplitter' visible='1'}
+:vSplitter.hSplitter_QSplitter	{container=':moduleFrame.vSplitter_QSplitter' name='hSplitter' type='QSplitter' visible='1'}
+:webEngView.Save in progress_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='loading-spinner' img_alt='Save in progress' tagName='IMG' type='HTML_Object' visible='true'}
+:webEngView.close_submit	{container=':stackWidget.webEngView_QWebEngineView' simplifiedInnerText='close' tagName='BUTTON' type='submit' visible='true'}
+:webEngView.content_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='content' tagName='DIV' type='HTML_Object' visible='true'}
+:webEngView.event-feedback_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='event-feedback' tagName='DIV' type='HTML_Object' visible='true'}
+:webEngView.export-options_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='export-options' tagName='A' type='HTML_Object' visible='true'}
+:webEngView.loading-spinner-wrap_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='loading-spinner-wrap' tagName='DIV' type='HTML_Object' visible='true'}
+:webEngView.report-toolbar_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='report-toolbar' tagName='DIV' type='HTML_Object' visible='true'}
+:webEngView.study-update-feeback_HTML_Object	{container=':stackWidget.webEngView_QWebEngineView' id='study-update-feeback' tagName='SPAN' type='HTML_Object' visible='true'}
+:workspacesWidget.123123_QModelIndex	{column='0' container=':pLoadWorkspaceDialog.workspacesWidget_QTreeWidget' text='123123' type='QModelIndex'}

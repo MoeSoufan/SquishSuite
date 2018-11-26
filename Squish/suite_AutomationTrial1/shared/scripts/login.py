@@ -3,43 +3,37 @@ import time
 import squish
 import test
 import object 
+import cvi42Objects
 
 def login(user, server):
     
-    # Qt objects used 
-    serverBox = ":comboBoxServer_QComboBox"
-    usernameBox = ":lineEditUserId_QLineEdit"
-    passwordBox = ":lineEditPassword_QLineEdit"
-    LoginButton = ":dialog.buttonLogin_QPushButton"
-    statusBar = ":cmr42MainWindow.cmr42StatusBar_QStatusBar"
-    
-    cviAlreadyRunning = ":Detected Running cvi42 Instance_QMessageBox"
-    cviAlreadyRunningOk = ":Detected Running cvi42 Instance.Yes_QPushButton"
-    
-    userAlreadyLoggedOn = ":User Already Logged on_QMessageBox"
-    userAlreadyLoggedOnOk = ":User Already Logged on.Yes_QPushButton"
-    
     # If cvi42 already running dialog popup
-    if object.exists(cviAlreadyRunning):
-        squish.mouseClick(squish.waitForObject(cviAlreadyRunningOk))
+    if object.exists(cvi42Objects.cviAlreadyRunning):
+        squish.mouseClick(squish.waitForObject(cvi42Objects.cviAlreadyRunningOk))
+    
+    # If cvi42 disconnected
+    if object.exists(cvi42Objects.mainDialog):
+        if object.exists(cvi42Objects.LoginDialog) is False:
+            test.log("Already Logged In")
+            return
     
     # Grabs desired server name
-    squish.mouseClick(squish.waitForObject(serverBox), 164, 7, 0, squish.Qt.LeftButton)
-    squish.mouseClick(squish.waitForObjectItem(serverBox, server), 105, 8, 0, squish.Qt.LeftButton)
+    squish.mouseClick(squish.waitForObject(cvi42Objects.serverBox), 164, 7, 0, squish.Qt.LeftButton)
+    squish.mouseClick(squish.waitForObjectItem(cvi42Objects.serverBox, server), 105, 8, 0, squish.Qt.LeftButton)
 
     # Populates username and password boxes and clicks login
-    squish.mouseClick(squish.waitForObject(usernameBox))
-    squish.waitForObject(usernameBox).setText(user)
-    squish.waitForObject(passwordBox).setText(user)
+    squish.mouseClick(squish.waitForObject(cvi42Objects.usernameBox))
+    squish.waitForObject(cvi42Objects.usernameBox).setText(user)
+    squish.waitForObject(cvi42Objects.passwordBox).setText(user)
     
-    squish.clickButton(squish.waitForObject(LoginButton))   
+    squish.clickButton(squish.waitForObject(cvi42Objects.LoginButton))   
     start = time.time()
     
     # If user already logged on dialog
-    if object.exists(userAlreadyLoggedOn):
-        squish.mouseClick(squish.waitForObject(userAlreadyLoggedOnOk))
+    if object.exists(cvi42Objects.userAlreadyLoggedOn):
+        squish.mouseClick(squish.waitForObject(cvi42Objects.userAlreadyLoggedOnOk))
     
-    status = squish.waitForObject(statusBar);
+    status = squish.waitForObject(cvi42Objects.statusBar);
         
     while True:
         if status.currentMessage() == "Load image previews done":
