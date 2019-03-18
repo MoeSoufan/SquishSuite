@@ -7,6 +7,8 @@ import objectMap
 import squishinfo
 import squish
 import cvi42Objects
+import os, signal
+
 
 def click_module(module, ct=False):
     
@@ -17,7 +19,7 @@ def click_module(module, ct=False):
     if ct == False:
         if object.exists(cvi42Objects.toolbarModuleButton) is True:
             if squish.waitForObject(cvi42Objects.toolbarModuleButton).text == module:
-                test.log("Module Already Loaded")
+#                 test.log("Module Already Loaded")
                 return
         
     while True:
@@ -99,8 +101,8 @@ def find_window(window_name):
                     
                     "4d flow": ":mMainPrepFrame.4D Flow_DcmFrameGL",
                     
-                    "flow2": ":frame2.Magnitude_DcmFrameGL",
-                    "flow1": ":frame1.Phase_DcmFrameGL",
+                    "flow2": ":mVencDcmFrame.Phase_DcmFrameGL",
+                    "flow1": ":mMagnDcmFrame.Magnitude_DcmFrameGL",
                     
                     "mitral1": ":mMprFrame.mAxialMprFrame_TriPlaneMprFrame",
                     "mitral2": ":mMprFrame.mCoronalMprFrame_TriPlaneMprFrame",
@@ -114,9 +116,10 @@ def find_window(window_name):
                     "fem1": ":mMprFrame.mRefTriPlaneMprFrames0_TriPlaneMprFrame_2",
                     "fem2": ":mMprFrame.mRefTriPlaneMprFrames2_TriPlaneMprFrame_2",
                     "fem3": ":mMprFrame.mRefTriPlaneMprFrames1_TriPlaneMprFrame_2",
-                    "fem4": ":mMprFrame.mRefSuperVisFrame_SuperVisFrame_2"}
+                    "fem4": ":mMprFrame.mRefSuperVisFrame_SuperVisFrame_2",
 
-
+                    "coron1": ":mViewersFrame.mRefSuperVisFrame_SuperVisFrame"}
+    
     for window in [k for k, v in windows_dict.items() if v == windows_dict[window_name]]:
         properties = object.properties(squish.waitForObject(windows_dict[window]))
         
@@ -134,26 +137,27 @@ def find_window(window_name):
 def load_series(window_given, series_num):
     
     series = ":scrollArea.frame-%s_SeriesThumbPreview" % (series_num-1)
-    
+
     window, x, y = find_window(window_given)
 
     # if series needed is bigger than 8, check if scrolling is needed to reach the series
     if object.exists(cvi42Objects.series_scrollbar):
         squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), -505)
         
-        if series_num > 4:
-            squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), 155)
-        
         if series_num > 8:
-            squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), 255)
-    
+            squish.scrollTo(squish.waitForObject(cvi42Objects.series_scrollbar), 855)
+
     # Load series into window requested
+
     squish.mouseMove(squish.waitForObject(series), 5, 5)
     squish.mousePress(squish.waitForObject(series))
 #     squish.snooze(1)
     squish.mouseRelease(squish.waitForObject(window))
-#     squish.snooze(1)
-
+    squish.snooze(0.2)
+    
+    if object.exists(":Load Volume.Yes_QPushButton"):
+        squish.clickButton(squish.waitForObject(":Load Volume.Yes_QPushButton"))
+        
     # Wait for progress bar 
     time = loading_time()
 
@@ -224,7 +228,7 @@ def loading_time():
             # If dialog doesn't exist for three consecutive iterations, break and time.
             else:
                 counter += 1
-                if counter > 2:
+                if counter > 3:
                     break
     end = time.time()
     
@@ -233,20 +237,14 @@ def loading_time():
 
 def save_workspace(workspace_name):
     
-    statusBar = ":cmr42MainWindow.cmr42StatusBar_QStatusBar"
-    menuBar = ":cmr42MainWindow.appMenuBar_QMenuBar"
-    workspaceButton = ":cmr42MainWindow.workspaceMenu_QMenu"
-    workspaceWindowEdit = ":SaveAsWorkspaceDialog.workspaceNameEdit_QLineEdit"
-    workspaceWindowOkButton = ":SaveAsWorkspaceDialog.OK_QPushButton"
-    
     # Grabs the status bar object to check current message
-    status = squish.waitForObject(statusBar);
+    status = squish.waitForObject(cvi42Objects.statusBar);
     
     # Saves workspace as name given
-    squish.activateItem(squish.waitForObjectItem(menuBar, "Workspace"))
-    squish.activateItem(squish.waitForObjectItem(workspaceButton, "Save Workspace As"))
-    squish.waitForObject(workspaceWindowEdit).setText(workspace_name)
-    squish.clickButton(squish.waitForObject(workspaceWindowOkButton))
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.menuBar, "Workspace"))
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.workspaceButton, "Save Workspace As"))
+    squish.waitForObject(cvi42Objects.workspaceWindowEdit).setText(workspace_name)
+    squish.clickButton(squish.waitForObject(cvi42Objects.workspaceWindowOkButton))
     
     start = time.time()
     while True:
@@ -292,6 +290,7 @@ def load_workspace(workspace_name):
 def close_study():
     
     squish.activateItem(squish.waitForObjectItem(cvi42Objects.menuBar, "Workspace"))
+    squish.snooze(0.5)
     squish.activateItem(squish.waitForObjectItem(cvi42Objects.workspaceButton, "Close Study"))
     start = time.time()
     
@@ -309,7 +308,6 @@ def close_study():
 def delete_study(study_name):
     
     squish.waitForObject(cvi42Objects.patientlistEditBox).setText(study_name)
-    
     squish.openContextMenu(squish.waitForObjectItem(cvi42Objects.studyTreeitem, study_name), 50, 13, 0)
     squish.activateItem(squish.waitForObjectItem(cvi42Objects.contextMenu, "Delete Study"))
 #     squish.snooze(1)
@@ -323,9 +321,52 @@ def delete_study(study_name):
             pass
     end = time.time()
     
-    test.log("Time to delete study: %.2f" %(end-start))
+#     test.log("Time to delete study: %.2f" %(end-start))
     
     squish.waitForObject(cvi42Objects.patientlistEditBox).setText("")
 
     
     return
+
+def close_cvi42():
+    
+    while True:
+        process_id = [item.split()[1] for item in os.popen('tasklist').read().splitlines()[4:]
+                  if "cvi42.exe" in item.split()]
+ 
+        if len(process_id) >= 1:
+            os.system("taskkill /im cvi42.exe")
+
+            if object.exists(cvi42Objects.QuitOkButton):
+                squish.clickButton(squish.waitForObject(cvi42Objects.QuitOkButton))
+            
+        else:
+            break
+ 
+    return
+
+def export_study(study_name):
+    
+    # status bar
+    status = squish.waitForObject(cvi42Objects.statusBar);
+
+    # Searches for study, and exports
+    squish.waitForObject(cvi42Objects.patientlistEditBox).setText(study_name)
+    squish.openContextMenu(squish.waitForObjectItem(cvi42Objects.studyTreeitem, study_name), 50, 5, 0)
+    squish.activateItem(squish.waitForObjectItem(cvi42Objects.contextMenu, "Export Study"))
+    
+    # export dialog flow 
+    squish.mouseClick(squish.waitForObjectItem(":splitter.sidebar_QSidebar", "My Computer"), 53, 13, 0, squish.Qt.LeftButton)
+    squish.mouseClick(squish.waitForObjectItem(":stackedWidget.treeView_QTreeView", "DATA (D:)"), 33, 14, 0, squish.Qt.LeftButton)
+    squish.doubleClick(squish.waitForObjectItem(":stackedWidget.treeView_QTreeView", "DATA (D:)"), 34, 11, 0, squish.Qt.LeftButton)
+    squish.clickButton(squish.waitForObject(":dcmBrowser.Choose_QPushButton"))
+    
+    start = time.time()
+    while True:
+        if status.currentMessage() == "Export Images done":
+            break
+        else:
+            pass
+    end = time.time()
+    
+    test.log("Time to export study: %.2f" % (end-start))

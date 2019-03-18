@@ -22,9 +22,14 @@ def load(study, ct=False):
     
     # Grabs the status bar object to check current message
     status = squish.waitForObject(cvi42Objects.statusBar);
+    
+    if "\\" in study:
+        studyUpdated = study.replace("\\","")
+    else:
+        studyUpdated = study
 
     # Search for study in patient list
-    squish.waitForObject(cvi42Objects.patientlistEditBox).setText(study)
+    squish.waitForObject(cvi42Objects.patientlistEditBox).setText(studyUpdated)
     squish.doubleClick(squish.waitForObjectItem(cvi42Objects.studyTreeitem, study), 22, 7, 0, squish.Qt.LeftButton)
     start = time.time()
     
@@ -44,9 +49,14 @@ def load(study, ct=False):
             if status.currentMessage() == "Study Already Open":
                 squish.clickButton(squish.waitForObject(cvi42Objects.returnStudyButton))
                 break
+            
+            # If study already loaded, exit patient list window
+            if status.currentMessage() == "Study is already loaded.":
+                squish.clickButton(squish.waitForObject(cvi42Objects.returnStudyButton))
+                break
         
         # If indication prompt is present
-        if object.exists(cvi42Objects.NoIndicationButton) is True:
+        if object.exists(cvi42Objects.SelectIndicationHeader) is True:
             squish.doubleClick(squish.waitForObject(cvi42Objects.NoIndicationButton))
     
     else:

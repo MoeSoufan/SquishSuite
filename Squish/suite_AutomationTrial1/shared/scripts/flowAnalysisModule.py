@@ -2,41 +2,45 @@
 import time
 import studyFunctions
 import object
-import squish
+import squish 
 
 
 def segment_forward():
-    segmentContour = ":mContourOptions.ToolButton-segAction_QToolButton"
-    forwardContour = ":mContourOptions.ToolButton-segForwardAction_QToolButton"
+                        
+    segmentContour = ":mContourOptions.ToolButton-mSegAction_QToolButton"
+    forwardContour = ":mContourOptions.ToolButton-mSegForwardAction_QToolButton"
 
     squish.mousePress(squish.waitForObject(segmentContour))
-    #     squish.snooze(1)
+#     squish.snooze(1)
     squish.mouseRelease(squish.waitForObject(segmentContour))
-
+    
     squish.clickButton(squish.waitForObject(forwardContour))
-
+    
     return
 
 
 def select_systemic():
-    systemicFlowButton = ":flowTabBar.Systemic Flow_TabItem"
-
+    
+    systemicFlowButton = ":mFlowSeriesPanelButtons.ToolButton-mFlow0PanelAction_QToolButton"
+    
     squish.mouseClick(squish.waitForObject(systemicFlowButton))
-
+    
     return
 
 
 def select_pulmonary():
-    pulmonaryFlowButton = ":flowTabBar.Pulmonary Flow_TabItem"
-
+    
+    pulmonaryFlowButton = ":mFlowSeriesPanelButtons.ToolButton-mFlow1PanelAction_QToolButton"
+    
     squish.mouseClick(squish.waitForObject(pulmonaryFlowButton))
-
+    
     return
 
 
 def select_comparison():
-    comparisonFlowButton = ":flowTabBar.Comparison_TabItem"
 
+    comparisonFlowButton = ":mFlowSeriesPanelButtons.ToolButton-mFlow2PanelAction_QToolButton"
+    
     squish.mouseClick(squish.waitForObject(comparisonFlowButton))
-
+    
     return

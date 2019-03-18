@@ -7,6 +7,7 @@ serverBox = ":comboBoxServer_QComboBox"
 usernameBox = ":lineEditUserId_QLineEdit"
 passwordBox = ":lineEditPassword_QLineEdit"
 LoginButton = ":dialog.buttonLogin_QPushButton"
+splash = ":gSplash_QSplashScreen"
 
 # Login Already running message
 cviAlreadyRunning = ":Detected Running cvi42 Instance_QMessageBox"
@@ -40,8 +41,10 @@ studyOpenOK = ":dcmBrowser.Yes_QPushButton"
 returnStudyButton = ":cmr42MainWindow.Return to Study_QToolButton"
 NoIndicationButton = ":indications.No Indication_QModelIndex"
 SelectIndicationHeader = ":Select indication:_HeaderViewItem"
-# ---------------------------------------------
+IndicationScrollBar = ":indications_QScrollBar"
+IndicationWidget = ":mWorkflowIndicationWidget.indications_QTreeWidget"
 
+# ---------------------------------------------
 # Module window
 # ---------------------------------------------
 toolbarModuleButton = ":cmr42MainWindow.mCurrentProtocolStepButton_QToolButton"
@@ -49,12 +52,22 @@ moduleListScrollbar = ":protocolSteps_QScrollBar"
 addProtocolButton = ":mWorkflowDockWidget.insertStep_QPushButton"
 addProtocolWindow = ":cmr42MainWindow.mModuleMenu_QMenu"
 
+# 4D Flow module
+confirmAreaButton = ":Flow4dPrepOptionsFrame.mConfirmRoiPushButton_QPushButton"
+
 # Study Widget
 # ---------------------------------------------
 series_scrollbar = "{container=':qt_tabwidget_stackedwidget.scrollArea_QScrollArea' type='QScrollBar' unnamed='1' visible='1'}"
 
+# Error windows
+report42Error = ":report42 Network Error_QMessageBox"
+report42ErrorOk = ":report42 Network Error.OK_QPushButton"
 
 # Toolbar widgets
 # ---------------------------------------------
 menuBar = ":cmr42MainWindow.appMenuBar_QMenuBar"
 workspaceButton = ":cmr42MainWindow.workspaceMenu_QMenu"
+workspaceWindowEdit = ":SaveAsWorkspaceDialog.workspaceNameEdit_QLineEdit"
+workspaceWindowOkButton = ":SaveAsWorkspaceDialog.OK_QPushButton"
+QuitWindow = ":Quit_QMessageBox"
+QuitOkButton = ":Quit.Quit_QPushButton"

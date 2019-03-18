@@ -28,11 +28,33 @@ def login(user, server):
     
     squish.clickButton(squish.waitForObject(cvi42Objects.LoginButton))   
     start = time.time()
-    
+    start2 = time.time()
+        
     # If user already logged on dialog
     if object.exists(cvi42Objects.userAlreadyLoggedOn):
         squish.mouseClick(squish.waitForObject(cvi42Objects.userAlreadyLoggedOnOk))
+        
+    # Benchmark splash screen measurements
+    splash = squish.waitForObject(cvi42Objects.splash)
+    message = splash.message()
     
+    counter = 0
+    while True:
+        try:
+            if object.exists(cvi42Objects.splash):
+                if message == splash.message():
+                    pass
+                else:
+                    splash_end = time.time()
+                    test.log("Time for %s: %.2f" %(message, (splash_end-start2)))
+                    message = splash.message()
+                    start2 = time.time()
+                    
+            else:
+                break
+        except:
+            break
+            
     status = squish.waitForObject(cvi42Objects.statusBar);
         
     while True:
